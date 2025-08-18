@@ -57,7 +57,7 @@ Views are the foundation of your application UI. Each view corresponds to a spec
 
 ```typescript
 import { Component } from "@angular/core";
-import { RegisterView, ViewGenerator, UiElement, ButtonBuilder, ParagraphBuilder } from "angular-ui-generator";
+import { RegisterView, Generator, UiElement, ButtonBuilder, ParagraphBuilder } from "angular-ui-generator";
 import { BViewComponent, CViewComponent } from "./child-views";
 
 @Component({
@@ -68,7 +68,7 @@ import { BViewComponent, CViewComponent } from "./child-views";
   name: "a",
   children: [BViewComponent, CViewComponent],
 })
-export class AViewComponent extends ViewGenerator {
+export class AViewComponent extends Generator {
   override generate(): UiElement[] {
     return [ButtonBuilder.build("button1"), ParagraphBuilder.build("paragraph1"), ButtonBuilder.build("button2")];
   }
@@ -79,7 +79,7 @@ export class AViewComponent extends ViewGenerator {
 
 - **`@Component` decorator**: Required by Angular.
 - **`@RegisterView` decorator**: Marks the component as a view and defines its route and children.
-- **`ViewGenerator` inheritance**: Required to access the `generate` method.
+- **`Generator` inheritance**: Required to access the `generate` method.
 - **`generate()` method**: Returns an array of UI elements that will be rendered in the view.
 
 ---
@@ -131,7 +131,7 @@ Imagine an app with a simple homepage and nested child views:
   name: "home",
   children: [AboutViewComponent, ContactViewComponent],
 })
-export class HomeViewComponent extends ViewGenerator {
+export class HomeViewComponent extends Generator {
   override generate(): UiElement[] {
     return [ButtonBuilder.build("Get Started"), ParagraphBuilder.build("Welcome to our app!")];
   }

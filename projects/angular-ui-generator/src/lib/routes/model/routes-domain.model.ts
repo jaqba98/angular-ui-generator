@@ -1,7 +1,7 @@
-import { ViewGenerator } from '../../generator';
+import { Generator } from '../../generator';
 
 export interface RoutesDomainModel {
   name: string;
-  target: typeof ViewGenerator;
+  target: typeof Generator;
   children: RoutesDomainModel[];
 }

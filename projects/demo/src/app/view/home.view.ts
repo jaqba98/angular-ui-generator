@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import {
   RegisterView,
-  ViewGenerator,
+  Generator,
   UiElement,
   BlockBuilder,
-  ButtonBuilder, ParagraphBuilder,
+  ButtonBuilder,
+  ParagraphBuilder,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
   selector: 'app-home-view',
-  template:
-    '<lib-generator-api-view-generator [uiElements]="uiElements"></lib-generator-api-view-generator>',
-  imports: [ViewGenerator],
+  template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
+  imports: [Generator],
 })
 @RegisterView({
   name: 'home',

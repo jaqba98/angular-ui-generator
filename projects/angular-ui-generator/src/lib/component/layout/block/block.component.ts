@@ -1,7 +1,7 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 
 @Component({
-  selector: 'lib-component-layout-block',
+  selector: 'aug-block',
   templateUrl: './block.component.html',
   styleUrl: './block.component.scss',
 })

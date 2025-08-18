@@ -8,10 +8,10 @@ import {
 import { UiElement, UiElementKindEnum } from '../../ui-element';
 
 @Component({
-  selector: 'lib-generator-api-view-generator',
+  selector: 'aug-generator',
   template: '<ng-container #container></ng-container>',
 })
-export class ViewGenerator implements AfterViewInit {
+export class Generator implements AfterViewInit {
   @ViewChild('container', { read: ViewContainerRef })
   container!: ViewContainerRef;
 
