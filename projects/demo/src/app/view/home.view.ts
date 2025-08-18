@@ -4,7 +4,7 @@ import {
   ViewGenerator,
   UiElement,
   BlockBuilder,
-  ButtonBuilder,
+  ButtonBuilder, ParagraphBuilder,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
@@ -25,9 +25,11 @@ export class HomeView {
       BlockBuilder.build([
         ButtonBuilder.build('Hello3'),
         ButtonBuilder.build('Hello4'),
+        ParagraphBuilder.build('Hello World 2222'),
       ]),
       ButtonBuilder.build('Hello5'),
       ButtonBuilder.build('Hello6'),
     ]),
+    ParagraphBuilder.build('Hello World'),
   ];
 }

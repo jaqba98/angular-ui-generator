@@ -1,0 +1,5 @@
+@use '../../../../style/component';
+
+.button {
+  @include component.button;
+}
