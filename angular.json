@@ -63,7 +63,10 @@
                 "input": "projects/demo/public"
               }
             ],
-            "styles": ["projects/demo/src/styles.scss"]
+            "styles": [
+              "projects/demo/src/styles.scss",
+              "projects/angular-ui-generator/src/lib/style/main.scss"
+            ]
           },
           "configurations": {
             "production": {
