@@ -17,7 +17,7 @@ import {
   name: 'home',
   children: [],
   route: {
-    path: '',
+    path: 'home',
     title: 'Home',
   },
 })

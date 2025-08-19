@@ -4,10 +4,10 @@ import { Route, Routes } from '@angular/router';
 export const routesBuilder = (routesDomains: RoutesDomainModel[]): Routes => {
   const routes = routesDomains.map((routesDomain) => {
     const route: Route = {
-      component: routesDomain.target,
-      children: [],
-      title: routesDomain.route.title,
-      path: routesDomain.route.path,
+      component: routesDomain.route.redirectTo
+        ? undefined
+        : routesDomain.target,
+      ...routesDomain.route,
     };
     routesDomain.children.forEach((child) => {
       if (route.children) {
@@ -23,7 +23,9 @@ export const routesBuilder = (routesDomains: RoutesDomainModel[]): Routes => {
   const cleanRoutes = routes
     .filter((routes) => routes.path !== '')
     .filter((route) => route.path !== '**');
-  return [empty, ...cleanRoutes, wildcard].filter(
+  const result = [empty, ...cleanRoutes, wildcard].filter(
     (route) => route !== undefined,
   );
+  console.log(result);
+  return result;
 };

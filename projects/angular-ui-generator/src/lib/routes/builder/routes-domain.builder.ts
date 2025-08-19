@@ -10,10 +10,8 @@ export const routesDomainBuilder = (views: any[]): RoutesDomainModel[] => {
       throw new Error('Failed to find the dto view');
     }
     const domain: RoutesDomainModel = {
-      name: viewDto.name,
-      route: viewDto.route,
+      ...viewDto,
       children: [],
-      target: viewDto.target,
     };
     if (viewDto.children && viewDto.children.length > 0) {
       viewDto.children.forEach((child) => {
