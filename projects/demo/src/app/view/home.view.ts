@@ -16,6 +16,7 @@ import {
 @RegisterView({
   name: 'home',
   children: [],
+  title: 'Home',
 })
 export class HomeView {
   uiElements: UiElement[] = [

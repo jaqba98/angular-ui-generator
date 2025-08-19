@@ -15,6 +15,7 @@ export const routesDomainBuilder = (
     name: viewDto.name,
     target: viewDto.target,
     children: [],
+    title: viewDto.title,
   };
   if (viewDto.children) {
     viewDto.children.forEach((dto) =>

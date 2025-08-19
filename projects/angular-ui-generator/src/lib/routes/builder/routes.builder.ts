@@ -7,6 +7,7 @@ export const routesBuilder = (viewDomain: RoutesDomainModel): Routes => {
     // eslint-disable-next-line
     component: viewDomain.target as any,
     children: [],
+    title: viewDomain.title,
   };
   viewDomain.children.forEach((child) => {
     if (route.children) {
