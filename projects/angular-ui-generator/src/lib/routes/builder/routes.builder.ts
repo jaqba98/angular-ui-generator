@@ -2,7 +2,7 @@ import { RoutesDomainModel } from '../model/routes-domain.model';
 import { Route, Routes } from '@angular/router';
 
 export const routesBuilder = (routesDomains: RoutesDomainModel[]): Routes => {
-  return routesDomains.map((routesDomain) => {
+  const routes = routesDomains.map((routesDomain) => {
     const route: Route = {
       component: routesDomain.target,
       children: [],
@@ -18,4 +18,9 @@ export const routesBuilder = (routesDomains: RoutesDomainModel[]): Routes => {
     });
     return route;
   });
+  const wildcard = routes.find((route) => route.path === '**');
+  const routesWithoutWildcard = routes.filter((route) => route.path !== '**');
+  return [...routesWithoutWildcard, wildcard].filter(
+    (route) => route !== undefined,
+  );
 };
