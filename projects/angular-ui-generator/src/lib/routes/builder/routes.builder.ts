@@ -18,9 +18,12 @@ export const routesBuilder = (routesDomains: RoutesDomainModel[]): Routes => {
     });
     return route;
   });
+  const empty = routes.find((route) => route.path === '');
   const wildcard = routes.find((route) => route.path === '**');
-  const routesWithoutWildcard = routes.filter((route) => route.path !== '**');
-  return [...routesWithoutWildcard, wildcard].filter(
+  const cleanRoutes = routes
+    .filter((routes) => routes.path !== '')
+    .filter((route) => route.path !== '**');
+  return [empty, ...cleanRoutes, wildcard].filter(
     (route) => route !== undefined,
   );
 };
