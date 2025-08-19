@@ -1,1 +1,1 @@
-export * from './store/dto/register-view-dto.store';
+export * from './store/register-view-dto.store';

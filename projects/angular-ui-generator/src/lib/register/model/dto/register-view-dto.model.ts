@@ -1,6 +1,7 @@
 import { RegisterViewArgModel } from '../arg/register-view-arg.model';
-import { Generator } from '../../../generator';
 
 export interface RegisterViewDtoModel extends RegisterViewArgModel {
-  target: typeof Generator;
+  // todo: Set normal target type instead of any
+  // eslint-disable-next-line
+  target: any;
 }
