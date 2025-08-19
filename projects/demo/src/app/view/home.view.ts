@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {
-  RegisterView,
+  AugRegisterView,
   Generator,
   UiElement,
   BlockBuilder,
@@ -13,10 +13,13 @@ import {
   template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
   imports: [Generator],
 })
-@RegisterView({
+@AugRegisterView({
   name: 'home',
   children: [],
-  title: 'Home',
+  route: {
+    path: '',
+    title: 'Home',
+  },
 })
 export class HomeView {
   uiElements: UiElement[] = [

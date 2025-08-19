@@ -57,14 +57,14 @@ Views are the foundation of your application UI. Each view corresponds to a spec
 
 ```typescript
 import { Component } from "@angular/core";
-import { RegisterView, Generator, UiElement, ButtonBuilder, ParagraphBuilder } from "angular-ui-generator";
+import { AugRegisterView, Generator, UiElement, ButtonBuilder, ParagraphBuilder } from "angular-ui-generator";
 import { BViewComponent, CViewComponent } from "./child-views";
 
 @Component({
   selector: "a-view",
   template: "<ng-container #viewGenerator></ng-container>",
 })
-@RegisterView({
+@AugRegisterView({
   name: "a",
   children: [BViewComponent, CViewComponent],
 })
@@ -78,7 +78,7 @@ export class AViewComponent extends Generator {
 ### Explanation
 
 - **`@Component` decorator**: Required by Angular.
-- **`@RegisterView` decorator**: Marks the component as a view and defines its route and children.
+- **`@AugRegisterView` decorator**: Marks the component as a view and defines its route and children.
 - **`Generator` inheritance**: Required to access the `generate` method.
 - **`generate()` method**: Returns an array of UI elements that will be rendered in the view.
 
@@ -100,18 +100,18 @@ To make your views functional, configure your app router in `app.config.ts`:
 ```typescript
 import { ApplicationConfig } from "@angular/core";
 import { provideRouter } from "@angular/router";
-import { routesGenerator } from "angular-ui-generator";
+import { augRoutes } from "angular-ui-generator";
 import { AViewComponent } from "./views/a-view.component";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routesGenerator(AViewComponent))],
+  providers: [provideRouter(augRoutes(AViewComponent))],
 };
 ```
 
 ### Explanation
 
 - **`provideRouter`**: Angular router provider.
-- **`routesGenerator`**: Generates all routes dynamically from your root view component.
+- **`augRoutes`**: Generates all routes dynamically from your root view component.
 
 ---
 
@@ -127,7 +127,7 @@ Imagine an app with a simple homepage and nested child views:
   selector: "home-view",
   template: "<ng-container #viewGenerator></ng-container>",
 })
-@RegisterView({
+@AugRegisterView({
   name: "home",
   children: [AboutViewComponent, ContactViewComponent],
 })

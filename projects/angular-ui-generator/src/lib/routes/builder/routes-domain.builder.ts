@@ -1,26 +1,25 @@
 import { RoutesDomainModel } from '../model/routes-domain.model';
 import { registerViewDtoStore } from '../../register';
-import { Generator } from '../../generator';
 
-export const routesDomainBuilder = (
-  view: typeof Generator,
-): RoutesDomainModel => {
-  const viewDto = registerViewDtoStore.find(
-    (viewDto) => viewDto.target === view,
-  );
-  if (!viewDto) {
-    throw new Error('Failed to find the dto view');
-  }
-  const domain: RoutesDomainModel = {
-    name: viewDto.name,
-    target: viewDto.target,
-    children: [],
-    title: viewDto.title,
-  };
-  if (viewDto.children) {
-    viewDto.children.forEach((dto) =>
-      domain.children.push(routesDomainBuilder(dto)),
-    );
-  }
-  return domain;
+// todo: Change the any type to the correct type
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const routesDomainBuilder = (views: any[]): RoutesDomainModel[] => {
+  return views.map((view) => {
+    const viewDto = registerViewDtoStore.find((dto) => dto.target === view);
+    if (!viewDto) {
+      throw new Error('Failed to find the dto view');
+    }
+    const domain: RoutesDomainModel = {
+      name: viewDto.name,
+      route: viewDto.route,
+      children: [],
+      target: viewDto.target,
+    };
+    if (viewDto.children && viewDto.children.length > 0) {
+      viewDto.children.forEach((child) => {
+        domain.children.push(routesDomainBuilder(child));
+      });
+    }
+    return domain;
+  });
 };
