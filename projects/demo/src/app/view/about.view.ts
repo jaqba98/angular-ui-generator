@@ -3,14 +3,14 @@ import {
   AugRegisterView,
   BlockBuilder,
   ButtonBuilder,
-  Generator,
+  AugViewGenerator,
   UiElement,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
   selector: 'app-about-view',
   template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
-  imports: [Generator],
+  imports: [AugViewGenerator],
 })
 @AugRegisterView({
   name: 'about',

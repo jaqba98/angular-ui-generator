@@ -11,7 +11,7 @@ import { UiElement, UiElementKindEnum } from '../../ui-element';
   selector: 'aug-generator',
   template: '<ng-container #container></ng-container>',
 })
-export class Generator implements AfterViewInit {
+export class AugViewGenerator implements AfterViewInit {
   @ViewChild('container', { read: ViewContainerRef })
   container!: ViewContainerRef;
 

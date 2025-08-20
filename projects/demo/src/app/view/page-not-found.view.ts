@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {
   AugRegisterView,
-  Generator,
+  AugViewGenerator,
   ParagraphBuilder,
   UiElement,
 } from '../../../../angular-ui-generator/src/public-api';
@@ -9,7 +9,7 @@ import {
 @Component({
   selector: 'app-page-not-found-view',
   template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
-  imports: [Generator],
+  imports: [AugViewGenerator],
 })
 @AugRegisterView({
   name: 'page-not-found',

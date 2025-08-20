@@ -1,9 +1,6 @@
-import { Route } from '@angular/router';
+import { AugViewGenerator } from '../../../generator';
 
 export interface RegisterViewArgModel {
   name: string;
-  route: Route;
-  // todo: create better way to store children for each view
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  children?: any[];
+  children: AugViewGenerator[];
 }

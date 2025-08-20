@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import {
   AugRegisterView,
-  Generator,
+  AugViewGenerator,
   UiElement,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
   selector: 'app-root-view',
   template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
-  imports: [Generator],
+  imports: [AugViewGenerator],
 })
 @AugRegisterView({
   name: 'root',

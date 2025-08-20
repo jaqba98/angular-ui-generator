@@ -1,4 +1,4 @@
-# Angular UI Generator
+# Angular UI AugViewGenerator
 
 `angular-ui-generator` is a powerful Angular tool designed to simplify the process of building UI elements dynamically within your Angular applications. This documentation provides a comprehensive guide on how to set up, use, and configure the tool.
 
@@ -8,7 +8,7 @@
 
 1. [Installation](#installation)
 2. [Creating a Standard Angular Project](#creating-a-standard-angular-project)
-3. [Setting Up Angular UI Generator](#setting-up-angular-ui-generator)
+3. [Setting Up Angular UI AugViewGenerator](#setting-up-angular-ui-generator)
 4. [Defining Views](#defining-views)
 5. [Available UI Components](#available-ui-components)
 6. [App Configuration](#app-configuration)
@@ -37,7 +37,7 @@ cd my-app
 
 ---
 
-## Setting Up Angular UI Generator
+## Setting Up Angular UI AugViewGenerator
 
 Once your Angular project is ready, install the generator:
 
@@ -57,7 +57,7 @@ Views are the foundation of your application UI. Each view corresponds to a spec
 
 ```typescript
 import { Component } from "@angular/core";
-import { AugRegisterView, Generator, UiElement, ButtonBuilder, ParagraphBuilder } from "angular-ui-generator";
+import { AugRegisterView, AugViewGenerator, UiElement, ButtonBuilder, ParagraphBuilder } from "angular-ui-generator";
 import { BViewComponent, CViewComponent } from "./child-views";
 
 @Component({
@@ -68,7 +68,7 @@ import { BViewComponent, CViewComponent } from "./child-views";
   name: "a",
   children: [BViewComponent, CViewComponent],
 })
-export class AViewComponent extends Generator {
+export class AViewComponent extends AugViewGenerator {
   override generate(): UiElement[] {
     return [ButtonBuilder.build("button1"), ParagraphBuilder.build("paragraph1"), ButtonBuilder.build("button2")];
   }
@@ -79,7 +79,7 @@ export class AViewComponent extends Generator {
 
 - **`@Component` decorator**: Required by Angular.
 - **`@AugRegisterView` decorator**: Marks the component as a view and defines its route and children.
-- **`Generator` inheritance**: Required to access the `generate` method.
+- **`AugViewGenerator` inheritance**: Required to access the `generate` method.
 - **`generate()` method**: Returns an array of UI elements that will be rendered in the view.
 
 ---
@@ -131,7 +131,7 @@ Imagine an app with a simple homepage and nested child views:
   name: "home",
   children: [AboutViewComponent, ContactViewComponent],
 })
-export class HomeViewComponent extends Generator {
+export class HomeViewComponent extends AugViewGenerator {
   override generate(): UiElement[] {
     return [ButtonBuilder.build("Get Started"), ParagraphBuilder.build("Welcome to our app!")];
   }

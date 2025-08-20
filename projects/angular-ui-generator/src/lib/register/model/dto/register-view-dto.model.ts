@@ -1,7 +1,7 @@
 import { RegisterViewArgModel } from '../arg/register-view-arg.model';
+import { AugViewGenerator } from '../../../generator';
 
-export interface RegisterViewDtoModel extends RegisterViewArgModel {
-  // todo: Set normal target type instead of any
-  // eslint-disable-next-line
-  target: any;
+export interface RegisterViewDtoModel {
+  arg: RegisterViewArgModel;
+  target: AugViewGenerator;
 }
