@@ -3,5 +3,5 @@ import { AugViewGenerator } from '../../../generator';
 
 export interface RegisterViewDtoModel {
   arg: RegisterViewArgModel;
-  target: AugViewGenerator;
+  target: typeof AugViewGenerator;
 }

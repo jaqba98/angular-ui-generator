@@ -3,7 +3,7 @@ import { RoutesDomainModel } from '../model/routes-domain.model';
 import { registerRouteDtoStore, registerViewDtoStore } from '../../register';
 
 export const routesDomainBuilder = (
-  views: AugViewGenerator[],
+  views: (typeof AugViewGenerator)[],
 ): RoutesDomainModel[] => {
   return views.map((view) => {
     const registerRoute = registerRouteDtoStore.find(

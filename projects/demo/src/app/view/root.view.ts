@@ -1,24 +1,20 @@
 import { Component } from '@angular/core';
 import {
+  AugRegisterRoute,
   AugRegisterView,
   AugViewGenerator,
-  UiElement,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
   selector: 'app-root-view',
-  template: '<aug-generator [uiElements]="uiElements"></aug-generator>',
-  imports: [AugViewGenerator],
+  template: '',
 })
 @AugRegisterView({
   name: 'root',
   children: [],
-  route: {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
 })
-export class RootView {
-  uiElements: UiElement[] = [];
-}
+@AugRegisterRoute({
+  path: '',
+  redirectTo: 'home',
+})
+export class RootView extends AugViewGenerator {}

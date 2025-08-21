@@ -3,7 +3,7 @@ import { AugViewGenerator } from '../../generator';
 import { registerViewDtoStore } from '../store/register-view-dto.store';
 
 export const registerViewDecorator = (arg: RegisterViewArgModel) => {
-  return (target: AugViewGenerator) => {
+  return (target: typeof AugViewGenerator) => {
     registerViewDtoStore.push({ arg, target });
   };
 };

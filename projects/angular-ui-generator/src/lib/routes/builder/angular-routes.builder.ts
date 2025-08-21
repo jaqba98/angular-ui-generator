@@ -25,9 +25,12 @@ export const angularRoutesBuilder = (
           : (routeDomain.route.target as AnyObject),
         path: routeDomain.route.arg.path,
         redirectTo: routeDomain.route.arg.redirectTo,
-        children: [],
+        title: routeDomain.route.arg.title,
+        children: routeDomain.route.arg.redirectTo
+          ? undefined
+          : angularRoutesBuilder(routeDomain.children),
+        pathMatch: routeDomain.route.arg.redirectTo ? 'full' : 'prefix',
       };
-      route.children = angularRoutesBuilder(routeDomain.children);
       return route;
     });
 };

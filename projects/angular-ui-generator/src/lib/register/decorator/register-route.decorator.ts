@@ -3,7 +3,7 @@ import { AugViewGenerator } from '../../generator';
 import { registerRouteDtoStore } from '../store/register-route-dto.store';
 
 export const registerRouteDecorator = (arg: RegisterRouteArgModel) => {
-  return (target: AugViewGenerator) => {
+  return (target: typeof AugViewGenerator) => {
     registerRouteDtoStore.push({ arg, target });
   };
 };

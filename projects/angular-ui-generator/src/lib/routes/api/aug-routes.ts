@@ -3,7 +3,9 @@ import { AugViewGenerator } from '../../generator';
 import { routesDomainBuilder } from '../builder/routes-domain.builder';
 import { angularRoutesBuilder } from '../builder/angular-routes.builder';
 
-export const augRoutes = (views: AugViewGenerator[]): Routes => {
+export const augRoutes = (views: (typeof AugViewGenerator)[]): Routes => {
   const routesDomains = routesDomainBuilder(views);
-  return angularRoutesBuilder(routesDomains);
+  const a = angularRoutesBuilder(routesDomains);
+  console.log(a);
+  return a;
 };

@@ -3,5 +3,5 @@ import { AugViewGenerator } from '../../../generator';
 
 export interface RegisterRouteDtoModel {
   arg: RegisterRouteArgModel;
-  target: AugViewGenerator;
+  target: typeof AugViewGenerator;
 }
