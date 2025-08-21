@@ -1,23 +1,31 @@
+import { AugViewGenerator } from '../../generator';
 import { RoutesDomainModel } from '../model/routes-domain.model';
-import { registerViewDtoStore } from '../../register';
+import { registerRouteDtoStore, registerViewDtoStore } from '../../register';
 
-// todo: Change the any type to the correct type
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const routesDomainBuilder = (views: any[]): RoutesDomainModel[] => {
+export const routesDomainBuilder = (
+  views: AugViewGenerator[],
+): RoutesDomainModel[] => {
   return views.map((view) => {
-    const viewDto = registerViewDtoStore.find((dto) => dto.target === view);
-    if (!viewDto) {
-      throw new Error('Failed to find the dto view');
+    const registerRoute = registerRouteDtoStore.find(
+      (dto) => dto.target === view,
+    );
+    const registerView = registerViewDtoStore.find(
+      (dto) => dto.target === view,
+    );
+    if (!registerRoute) {
+      throw new Error('Failed to find the route for given view');
+    }
+    if (!registerView) {
+      throw new Error('Failed to find the route for given view');
     }
     const domain: RoutesDomainModel = {
-      ...viewDto,
+      route: registerRoute,
+      view: registerView,
       children: [],
     };
-    if (viewDto.children && viewDto.children.length > 0) {
-      viewDto.children.forEach((child) => {
-        domain.children.push(routesDomainBuilder(child));
-      });
-    }
+    registerView.arg.children.forEach((child) => {
+      domain.children = [...domain.children, ...routesDomainBuilder([child])];
+    });
     return domain;
   });
 };

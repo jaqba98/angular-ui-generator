@@ -1,3 +1,4 @@
-import { Route } from '@angular/router';
-
-export type RegisterRouteArgModel = Route;
+export interface RegisterRouteArgModel {
+  path?: string;
+  redirectTo?: string;
+}
