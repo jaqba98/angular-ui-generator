@@ -1,8 +1,7 @@
 import { ButtonComponent, ButtonMetadataModel } from '../../../../component';
-import { UiElementKindEnum } from '../../../enum/ui-element-kind.enum';
 
 export interface ButtonBuilderModel {
-  kind: UiElementKindEnum.button;
+  kind: 'button';
   component: typeof ButtonComponent;
   metadata: ButtonMetadataModel;
 }

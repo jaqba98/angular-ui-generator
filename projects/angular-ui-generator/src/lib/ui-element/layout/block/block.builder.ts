@@ -1,14 +1,14 @@
-import { UiElement } from '../../type/ui-element';
 import { BlockBuilderModel } from './block-builder.model';
-import { BlockComponent } from '../../../component';
-import { UiElementKindEnum } from '../../enum/ui-element-kind.enum';
+import { BlockComponent, BlockTagType } from '../../../component';
 
 export class BlockBuilder {
-  static build(children: UiElement[]): BlockBuilderModel {
+  static build(tag: BlockTagType): BlockBuilderModel {
     return {
-      kind: UiElementKindEnum.block,
+      kind: 'block',
       component: BlockComponent,
-      children,
+      metadata: {
+        tag,
+      },
     };
   }
 }

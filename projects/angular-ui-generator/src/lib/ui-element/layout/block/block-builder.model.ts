@@ -1,9 +1,7 @@
-import { BlockComponent } from '../../../component';
-import { UiElement } from '../../type/ui-element';
-import { UiElementKindEnum } from '../../enum/ui-element-kind.enum';
+import { BlockComponent, BlockMetadataModel } from '../../../component';
 
 export interface BlockBuilderModel {
-  kind: UiElementKindEnum.block;
+  kind: 'block';
   component: typeof BlockComponent;
-  children: UiElement[];
+  metadata: BlockMetadataModel;
 }

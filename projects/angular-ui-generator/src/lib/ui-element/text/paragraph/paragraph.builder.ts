@@ -1,11 +1,10 @@
-import { ParagraphComponent } from '../../../component';
 import { ParagraphBuilderModel } from './paragraph-builder.model';
-import { UiElementKindEnum } from '../../enum/ui-element-kind.enum';
+import { ParagraphComponent } from '../../../component';
 
 export class ParagraphBuilder {
   static build(text: string): ParagraphBuilderModel {
     return {
-      kind: UiElementKindEnum.paragraph,
+      kind: 'paragraph',
       component: ParagraphComponent,
       metadata: {
         text,
