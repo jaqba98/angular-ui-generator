@@ -1,5 +1,5 @@
-@use "../../../style/component";
+@use "../../../style/component/layout/block";
 
 .block {
-  @include component.block;
+  @include block.build-block;
 }

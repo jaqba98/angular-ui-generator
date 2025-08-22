@@ -1,5 +1,4 @@
 import { Component, input, ViewChild, ViewContainerRef } from '@angular/core';
-import { BlockMetadataModel } from './block-metadata.model';
 
 @Component({
   selector: 'aug-block',
@@ -10,5 +9,6 @@ export class BlockComponent {
   @ViewChild('container', { read: ViewContainerRef, static: true })
   container!: ViewContainerRef;
 
-  metadata = input.required<BlockMetadataModel>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  tag = input.required<any>();
 }
