@@ -1,151 +1,59 @@
-# Angular-UI-Generator: Register Functionality
+# AngularUiGenerator
 
-The **register functionality** in `angular-ui-generator` allows you to declare and organize views and routes in your Angular application.  
-This is achieved through two decorators:
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
 
-- `@AugRegisterRoute()` → Registers a component as a routable page.
-- `@AugRegisterView()` → Registers a component as a logical view with child components.
+## Development server
 
-These decorators simplify the integration of UI elements and routing without requiring manual setup in Angular modules.
+To start a local development server, run:
 
----
-
-## Decorators
-
-### `@AugRegisterRoute(arg: RegisterRouteArgModel)`
-
-Registers a component as a routable page.
-
-**Parameters (RegisterRouteArgModel):**
-
-- `path?: string` — Defines the route path (e.g., `"example"`).
-- `redirectTo?: string` — Redirects to another path if set.
-- `title?: string` — Page title for the route.
-
----
-
-### `@AugRegisterView(arg: RegisterViewArgModel)`
-
-Registers a component as a view with child components.
-
-**Parameters (RegisterViewArgModel):**
-
-- `name: string` — Unique name for the view.
-- `children: (typeof AugGenerator)[]` — Child components extending `AugGenerator`.
-
----
-
-## Interfaces & Models
-
-### `RegisterRouteArgModel`
-
-Defines the properties used when registering a route.
-
-```ts
-export interface RegisterRouteArgModel {
-  path?: string;
-  redirectTo?: string;
-  title?: string;
-}
+```bash
+ng serve
 ```
 
-### `RegisterViewArgModel`
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-Defines the properties used when registering a view.
+## Code scaffolding
 
-```ts
-export interface RegisterViewArgModel {
-  name: string;
-  children: (typeof AugGenerator)[];
-}
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
 ```
 
----
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-## Example: Registering a Simple View with a Route
-
-```ts
-import { Component } from "@angular/core";
-import { AugGenerator, AugUiElement, AugParagraphBuilder } from "angular-ui-generator";
-import { AugRegisterRoute, AugRegisterView } from "angular-ui-generator/register";
-
-@Component({
-  selector: "example-view",
-  template: "",
-})
-@AugRegisterView({
-  name: "example",
-  children: [],
-})
-@AugRegisterRoute({
-  path: "example",
-  title: "Example",
-})
-export class ExampleView extends AugGenerator {
-  override getUiElements(): AugUiElement[] {
-    return [AugParagraphBuilder.build("This is an example view.")];
-  }
-}
+```bash
+ng generate --help
 ```
 
----
+## Building
 
-## Example: Registering a View with Child Components
+To build the project run:
 
-```ts
-import { Component } from "@angular/core";
-import { AugGenerator, AugUiElement, AugParagraphBuilder } from "angular-ui-generator";
-import { AugRegisterRoute, AugRegisterView } from "angular-ui-generator/register";
-
-@Component({
-  selector: "child-view",
-  template: "",
-})
-@AugRegisterView({
-  name: "child",
-  children: [],
-})
-@AugRegisterRoute({
-  path: "child",
-  title: "Child Page",
-})
-export class ChildView extends AugGenerator {
-  override getUiElements(): AugUiElement[] {
-    return [AugParagraphBuilder.build("Child View Content")];
-  }
-}
-
-@Component({
-  selector: "parent-view",
-  template: "",
-})
-@AugRegisterView({
-  name: "parent",
-  children: [ChildView],
-})
-@AugRegisterRoute({
-  path: "parent",
-  title: "Parent Page",
-})
-export class ParentView extends AugGenerator {
-  override getUiElements(): AugUiElement[] {
-    return [AugParagraphBuilder.build("Parent View with Child")];
-  }
-}
+```bash
+ng build
 ```
 
-In this setup:
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-- `ParentView` is registered as a route at `/parent`.
-- `ChildView` is a child of `ParentView` and has its own route `/child`.
+## Running unit tests
 
----
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-## Notes & Tips
+```bash
+ng test
+```
 
-- Always extend your components from `AugGenerator` to use these decorators.
-- Use `@AugRegisterView` when grouping views together, even if no child views exist yet.
-- Use `@AugRegisterRoute` to ensure Angular routing picks up your registered view.
-- Combine both decorators on the same component for a view that also needs routing.
+## Running end-to-end tests
 
----
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
