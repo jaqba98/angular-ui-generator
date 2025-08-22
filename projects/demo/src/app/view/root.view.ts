@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import {
+  AugGenerator,
   AugRegisterRoute,
   AugRegisterView,
-  AugGenerator,
+  AugUiElement,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
@@ -17,4 +18,8 @@ import {
   path: '',
   redirectTo: 'home',
 })
-export class RootView extends AugGenerator {}
+export class RootView extends AugGenerator {
+  override getUiElements(): AugUiElement[] {
+    return [];
+  }
+}

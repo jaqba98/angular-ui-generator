@@ -3,11 +3,13 @@ import {
   AugRegisterRoute,
   AugRegisterView,
   AugGenerator,
+  AugUiElement,
+  AugParagraphBuilder,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
   selector: 'app-home-view',
-  template: '<p>home works!</p>',
+  template: '',
 })
 @AugRegisterView({
   name: 'home',
@@ -17,4 +19,8 @@ import {
   path: 'home',
   title: 'Home',
 })
-export class HomeView extends AugGenerator {}
+export class HomeView extends AugGenerator {
+  override getUiElements(): AugUiElement[] {
+    return [AugParagraphBuilder.build('home view')];
+  }
+}

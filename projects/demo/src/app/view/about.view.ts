@@ -3,11 +3,13 @@ import {
   AugRegisterRoute,
   AugRegisterView,
   AugGenerator,
+  AugUiElement,
+  AugParagraphBuilder,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
   selector: 'app-about-view',
-  template: '<p>about works!</p>',
+  template: '',
 })
 @AugRegisterView({
   name: 'about',
@@ -17,4 +19,8 @@ import {
   path: 'about',
   title: 'About',
 })
-export class AboutView extends AugGenerator {}
+export class AboutView extends AugGenerator {
+  override getUiElements(): AugUiElement[] {
+    return [AugParagraphBuilder.build('about view')];
+  }
+}
