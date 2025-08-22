@@ -1,1 +1,1 @@
-export * from './model/any-object';
+export * from './type/common-type';

@@ -1,6 +1,6 @@
 import { RoutesDomainModel } from '../model/routes-domain.model';
 import { Route, Routes } from '@angular/router';
-import { AnyObject } from '../../shared';
+import { Any } from '../../shared';
 
 export const angularRoutesBuilder = (
   routesDomain: RoutesDomainModel[],
@@ -22,7 +22,7 @@ export const angularRoutesBuilder = (
       const route: Route = {
         component: routeDomain.route.arg.redirectTo
           ? undefined
-          : (routeDomain.route.target as AnyObject),
+          : (routeDomain.route.target as Any),
         path: routeDomain.route.arg.path,
         redirectTo: routeDomain.route.arg.redirectTo,
         title: routeDomain.route.arg.title,
