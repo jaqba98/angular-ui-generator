@@ -1,5 +1,5 @@
-@use "../../../../style/component";
+@use "../../../../style/component/control/basic/button";
 
 .button {
-  @include component.button;
+  @include button.build-button;
 }

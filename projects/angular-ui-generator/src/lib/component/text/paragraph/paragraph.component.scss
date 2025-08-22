@@ -1,5 +1,5 @@
-@use "../../../style/component";
+@use "../../../style/component/text/paragraph";
 
 .paragraph {
-  @include component.paragraph;
+  @include paragraph.build-paragraph;
 }

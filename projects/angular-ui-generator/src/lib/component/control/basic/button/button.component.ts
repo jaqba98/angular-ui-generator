@@ -1,5 +1,4 @@
 import { Component, input } from '@angular/core';
-import { ButtonMetadataModel } from './button-metadata.model';
 
 @Component({
   selector: 'aug-button',
@@ -7,5 +6,5 @@ import { ButtonMetadataModel } from './button-metadata.model';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  metadata = input.required<ButtonMetadataModel>();
+  label = input.required<string>();
 }

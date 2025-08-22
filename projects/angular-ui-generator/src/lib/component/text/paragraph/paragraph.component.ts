@@ -1,5 +1,4 @@
 import { Component, input } from '@angular/core';
-import { ParagraphMetadataModel } from './paragraph-metadata.model';
 
 @Component({
   selector: 'aug-paragraph',
@@ -7,5 +6,5 @@ import { ParagraphMetadataModel } from './paragraph-metadata.model';
   styleUrl: './paragraph.component.scss',
 })
 export class ParagraphComponent {
-  metadata = input.required<ParagraphMetadataModel>();
+  text = input.required<string>();
 }
