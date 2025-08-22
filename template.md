@@ -12,6 +12,7 @@ Do NOT explain internal implementation. Provide **working Angular examples** (co
 Inputs:
 
 Framework Name: {framework_name}
+
 Full Code Implementation (TypeScript / Angular):
 
 ```
@@ -19,7 +20,9 @@ Full Code Implementation (TypeScript / Angular):
 ```
 
 Description: {description}
+
 Example Usage: {examples}
+
 Notes/Tips: {notes}
 
 ---
