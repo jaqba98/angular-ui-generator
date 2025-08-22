@@ -5,7 +5,7 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { UiElement, UiElementKindEnum } from '../../ui-element';
+import { AugUiElement, UiElementKindEnum } from '../../ui-element';
 
 @Component({
   selector: 'aug-generator',
@@ -15,13 +15,13 @@ export class AugViewGenerator implements AfterViewInit {
   @ViewChild('container', { read: ViewContainerRef })
   container!: ViewContainerRef;
 
-  uiElements = input.required<UiElement[]>();
+  uiElements = input.required<AugUiElement[]>();
 
   ngAfterViewInit() {
     this.generate(this.uiElements(), this.container);
   }
 
-  generate(uiElements: UiElement[], container: ViewContainerRef) {
+  generate(uiElements: AugUiElement[], container: ViewContainerRef) {
     uiElements.forEach((uiElement) => {
       const { kind } = uiElement;
 

@@ -1,1 +1,1 @@
-export * from './type/ui-element';
+export * from './type/aug-ui-element';
