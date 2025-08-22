@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {
   AugRegisterRoute,
   AugRegisterView,
-  AugViewGenerator,
+  AugGenerator,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
@@ -17,4 +17,4 @@ import {
   path: '',
   redirectTo: 'home',
 })
-export class RootView extends AugViewGenerator {}
+export class RootView extends AugGenerator {}

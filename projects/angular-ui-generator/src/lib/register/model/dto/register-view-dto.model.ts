@@ -1,7 +1,7 @@
 import { RegisterViewArgModel } from '../arg/register-view-arg.model';
-import { AugViewGenerator } from '../../../generator';
+import { AugGenerator } from '../../../generator';
 
 export interface RegisterViewDtoModel {
   arg: RegisterViewArgModel;
-  target: typeof AugViewGenerator;
+  target: typeof AugGenerator;
 }
