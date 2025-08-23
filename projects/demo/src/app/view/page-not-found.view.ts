@@ -3,7 +3,7 @@ import {
   AugRegisterRoute,
   AugRegisterView,
   AugGenerator,
-  AugUiElement,
+  ComponentMetadataType,
   AugParagraphBuilder,
 } from '../../../../angular-ui-generator/src/public-api';
 
@@ -20,7 +20,7 @@ import {
   title: 'Page not found',
 })
 export class PageNotFoundView extends AugGenerator {
-  override getUiElements(): AugUiElement[] {
+  override getUiElements(): ComponentMetadataType[] {
     return [AugParagraphBuilder.build('page not found view')];
   }
 }

@@ -3,7 +3,7 @@ import {
   AugRegisterRoute,
   AugRegisterView,
   AugGenerator,
-  AugUiElement,
+  ComponentMetadataType,
   AugParagraphBuilder,
 } from '../../../../angular-ui-generator/src/public-api';
 
@@ -20,7 +20,7 @@ import {
   title: 'About',
 })
 export class AboutView extends AugGenerator {
-  override getUiElements(): AugUiElement[] {
+  override getUiElements(): ComponentMetadataType[] {
     return [AugParagraphBuilder.build('about view')];
   }
 }

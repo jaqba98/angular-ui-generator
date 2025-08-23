@@ -3,7 +3,7 @@ import {
   AugGenerator,
   AugRegisterRoute,
   AugRegisterView,
-  AugUiElement,
+  ComponentMetadataType,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
@@ -19,7 +19,7 @@ import {
   redirectTo: 'home',
 })
 export class RootView extends AugGenerator {
-  override getUiElements(): AugUiElement[] {
+  override getUiElements(): ComponentMetadataType[] {
     return [];
   }
 }
