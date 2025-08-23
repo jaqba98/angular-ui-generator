@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import {
+  AugComponentMetadataType,
   AugRegisterRoute,
   AugRegisterView,
-  AugGenerator,
-  ComponentMetadataType,
-  AugParagraphBuilder,
+  AugViewGenerator,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
@@ -19,8 +18,8 @@ import {
   path: 'about',
   title: 'About',
 })
-export class AboutView extends AugGenerator {
-  override getUiElements(): ComponentMetadataType[] {
-    return [AugParagraphBuilder.build('about view')];
+export class AboutView extends AugViewGenerator {
+  override generate(): AugComponentMetadataType[] {
+    throw new Error('Method not implemented.');
   }
 }
