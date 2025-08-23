@@ -1,2 +1,1 @@
-export * from './type/common-type';
-export * from './type/tag-type';
+export * from './type/block-component-tag.type';

@@ -1,3 +1,17 @@
-<div class="block">
-  <ng-container #container></ng-container>
-</div>
+@switch (tag()) {
+  @case ('div') {
+    <div class="block">
+      <ng-container #container></ng-container>
+    </div>
+  }
+  @case ('header') {
+    <header class="block">
+      <ng-container #container></ng-container>
+    </header>
+  }
+  @case ('footer') {
+    <footer class="block">
+      <ng-container #container></ng-container>
+    </footer>
+  }
+}
