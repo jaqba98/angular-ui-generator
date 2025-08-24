@@ -1,2 +1,2 @@
 export * from './api/aug-view-generator';
-export * from './type/aug-component-metadata.type';
+export * from './type/aug-view-metadata';

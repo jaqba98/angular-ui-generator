@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {
-  AugComponentMetadataType,
+  AugViewMetadata,
   AugRegisterRoute,
   AugRegisterView,
   AugViewGenerator,
@@ -19,7 +19,7 @@ import {
   title: 'About',
 })
 export class AboutView extends AugViewGenerator {
-  override generate(): AugComponentMetadataType[] {
+  override generate(): AugViewMetadata[] {
     throw new Error('Method not implemented.');
   }
 }

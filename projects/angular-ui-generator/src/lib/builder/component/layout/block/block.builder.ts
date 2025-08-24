@@ -7,6 +7,6 @@ export class BlockBuilder {
     const { tag, children } = metadata;
     const component = container.createComponent(BlockComponent);
     component.setInput('tag', tag);
-    return children;
+    return { component, children };
   }
 }

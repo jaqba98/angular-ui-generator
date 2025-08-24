@@ -1,63 +1,54 @@
-// todo: I am here
 import {
   AfterViewInit,
   Component,
   inject,
   ViewContainerRef,
 } from '@angular/core';
-import { AugComponentMetadataType } from '../type/aug-component-metadata.type';
+import { AugViewMetadata } from '../type/aug-view-metadata';
+import { BlockBuilder, ButtonBuilder, ParagraphBuilder } from '../../builder';
 
 @Component({
   selector: 'aug-view-generator',
   template: '',
 })
 export abstract class AugViewGenerator implements AfterViewInit {
-  private readonly vcr = inject(ViewContainerRef);
+  private readonly viewContainerRef = inject(ViewContainerRef);
+  private readonly buttonBuilder = inject(ButtonBuilder);
+  private readonly blockBuilder = inject(BlockBuilder);
+  private readonly paragraphBuilder = inject(ParagraphBuilder);
 
-  abstract generate(): AugComponentMetadataType[];
+  abstract buildViewMetadata(): AugViewMetadata[];
 
   ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
+    this.generate(this.buildViewMetadata(), this.viewContainerRef);
   }
 
-  // ngAfterViewInit() {
-  //   this.generate(this.getUiElements(), this.viewContainerRef);
-  // }
-  //
-  // abstract getUiElements(): AugComponentMetadataType[];
-  //
-  // private generate(
-  //   augUiElements: AugComponentMetadataType[],
-  //   container: ViewContainerRef,
-  // ) {
-  //   augUiElements.forEach((augUiElement) => {
-  //     const { kind } = augUiElement;
-  //     switch (kind) {
-  //       case 'button': {
-  //         // const { component, metadata } = augUiElement;
-  //         // const newComponent = container.createComponent(component);
-  //         // newComponent.setInput('metadata', metadata);
-  //         break;
-  //       }
-  //       case 'block': {
-  //         const { component, metadata, children } = augUiElement;
-  //         const newComponent = container.createComponent(component);
-  //         newComponent.setInput('metadata', metadata);
-  //         const childContainer = newComponent.instance.container;
-  //         this.generate(children, childContainer);
-  //         break;
-  //       }
-  //       case 'paragraph': {
-  //         const { component, metadata } = augUiElement;
-  //         const newComponent = container.createComponent(component);
-  //         newComponent.setInput('metadata', metadata);
-  //         break;
-  //       }
-  //       default:
-  //         throw new Error('Not supported kind');
-  //     }
-  //
-  //     console.log(augUiElement, container);
-  //   });
-  // }
+  private generate(
+    augViewMetadata: AugViewMetadata[],
+    container: ViewContainerRef,
+  ) {
+    augViewMetadata.forEach((metadata) => {
+      const { kind } = metadata;
+      switch (kind) {
+        case 'button': {
+          this.buttonBuilder.build(container, metadata);
+          break;
+        }
+        case 'block': {
+          const { component, children } = this.blockBuilder.build(
+            container,
+            metadata,
+          );
+          this.generate(children, component.instance.container);
+          break;
+        }
+        case 'paragraph': {
+          this.paragraphBuilder.build(container, metadata);
+          break;
+        }
+        default:
+          throw new Error('Not supported kind');
+      }
+    });
+  }
 }
