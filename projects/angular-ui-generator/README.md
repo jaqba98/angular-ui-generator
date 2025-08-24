@@ -1,3 +1,10 @@
+# Angular UI Generator
+
+## Table of contents
+- [Metadata models](#metadata-models)
+
+## Metadata models
+
 > ### Button
 >
 > #### Metadata model for a button:
