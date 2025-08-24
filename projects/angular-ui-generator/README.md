@@ -1,9 +1,9 @@
 # Angular UI Generator
 
-## Table of contents
+### Table of contents
 - [Metadata models](#metadata-models)
 
-## Metadata models
+### Metadata models
 
 > ### Button
 >
