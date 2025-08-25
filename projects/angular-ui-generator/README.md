@@ -80,7 +80,7 @@ Possible `AugRegisterView` options:
 ```
 {
   name: string, // Name of the view.
-  children: AugViewGeneratorType[], // Children of the current view.
+  children: ViewGeneratorType[], // Children of the current view.
 }
 ```
 

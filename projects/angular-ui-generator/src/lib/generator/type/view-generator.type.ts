@@ -1,3 +1,3 @@
 import { AugViewGenerator } from '../api/aug-view-generator';
 
-export type AugViewGeneratorType = typeof AugViewGenerator;
+export type ViewGeneratorType = typeof AugViewGenerator;

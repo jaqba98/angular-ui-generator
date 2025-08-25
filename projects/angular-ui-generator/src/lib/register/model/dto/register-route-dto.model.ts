@@ -1,7 +1,7 @@
 import { RegisterRouteArgModel } from '../arg/register-route-arg.model';
-import { AugViewGeneratorType } from '../../../generator';
+import { ViewGeneratorType } from '../../../generator';
 
 export interface RegisterRouteDtoModel {
   arg: RegisterRouteArgModel;
-  target: AugViewGeneratorType;
+  target: ViewGeneratorType;
 }

@@ -1,1 +1,1 @@
-export * from './type/aug-view-generator.type';
+export * from './type/view-generator.type';

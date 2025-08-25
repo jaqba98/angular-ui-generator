@@ -1,5 +1,6 @@
 import { RoutesDomainModel } from '../model/routes-domain.model';
 import { Route, Routes } from '@angular/router';
+import { AnyType } from '../../shared';
 
 export const angularRoutesBuilder = (
   routesDomain: RoutesDomainModel[],
@@ -21,8 +22,7 @@ export const angularRoutesBuilder = (
       const route: Route = {
         component: routeDomain.route.arg.redirectTo
           ? undefined
-          : // eslint-disable-next-line
-            (routeDomain.route.target as any),
+          : (routeDomain.route.target as AnyType),
         path: routeDomain.route.arg.path,
         redirectTo: routeDomain.route.arg.redirectTo,
         title: routeDomain.route.arg.title,
