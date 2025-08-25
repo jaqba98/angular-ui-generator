@@ -1,6 +1,6 @@
-import { AugViewGenerator } from '../../../generator/api/aug-view-generator';
+import { AugViewGeneratorType } from '../../../generator';
 
 export interface RegisterViewArgModel {
   name: string;
-  children: (typeof AugViewGenerator)[];
+  children: AugViewGeneratorType[];
 }
