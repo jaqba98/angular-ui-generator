@@ -1,6 +1,6 @@
-# Generator
+## Generator
 
-## AugViewGenerator
+### AugViewGenerator
 
 To generate a view, you need to extend the `AugViewGenerator` class and implement the `buildViewMetadata` method.
 This method should return an array of `AugViewMetadata` objects that define the structure and content of the view.
@@ -21,6 +21,6 @@ export class HelloWorldView extends AugViewGenerator {
 }
 ```
 
-## AugViewMetadata
+### AugViewMetadata
 
 Below there are all the possible metadata objects that you can use to define the structure of your view.

@@ -1,6 +1,6 @@
 {
   "name": "angular-ui-generator",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "peerDependencies": {
     "@angular/common": "^20.1.0",
     "@angular/core": "^20.1.0"
