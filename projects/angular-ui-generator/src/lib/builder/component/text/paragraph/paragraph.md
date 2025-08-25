@@ -1,12 +1,12 @@
 > ### Paragraph
 >
-> #### Metadata model for a paragraph:
+> #### Metadata object for a paragraph:
 >
 > ```typescript
 > [
 >   {
->     kind: "paragraph", // Specifies that the component is a paragraph.
->     text: "Hello world!", // Text to display on the paragraph.
+>     kind: "paragraph", // Specifies that the metadata object is a paragraph.
+>     text: "Hello world", // The text displayed on the paragraph.
 >   },
 > ];
 > ```

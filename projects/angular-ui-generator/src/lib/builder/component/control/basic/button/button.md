@@ -1,12 +1,12 @@
 > ### Button
 >
-> #### Metadata model for a button:
+> #### Metadata object for a button:
 >
 > ```typescript
 > [
 >   {
->     kind: "button", // Specifies that the component is a button.
->     label: "Click me!", // Text to display on the button.
+>     kind: "button", // Specifies that the metadata object is a button.
+>     label: "Click me!", // The label displayed on the button.
 >   },
 > ];
 > ```
