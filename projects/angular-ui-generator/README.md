@@ -2,13 +2,13 @@
 
 ## Table of contents
 
-* [Overview](#overview)
-* [Generator](#generator)
-  * [AugViewGenerator](#augviewgenerator)
-  * [AugViewMetadata](#augviewmetadata)
-    * [Button](#button)
-    * [Block](#block)
-    * [Paragraph](#paragraph)
+- [Overview](#overview)
+- [Generator](#generator)
+  - [AugViewGenerator](#augviewgenerator)
+  - [AugViewMetadata](#augviewmetadata)
+    - [Button](#button)
+    - [Block](#block)
+    - [Paragraph](#paragraph)
 
 ## Overview
 
