@@ -1,25 +1,30 @@
-// import { Component } from '@angular/core';
-// import {
-//   AugRegisterRoute,
-//   AugRegisterView,
-// } from '../../../../angular-ui-generator/src/public-api';
-// import {AugGenerator, AugParagraphBuilder} from 'angular-ui-generator';
-// import {ComponentMetadataType} from '../../../../angular-ui-generator/src/lib/builder';
-//
-// @Component({
-//   selector: 'app-home-view',
-//   template: '',
-// })
-// @AugRegisterView({
-//   name: 'home',
-//   children: [],
-// })
-// @AugRegisterRoute({
-//   path: 'home',
-//   title: 'Home',
-// })
-// export class HomeView extends AugGenerator {
-//   override buildViewMetadata(): ComponentMetadataType[] {
-//     return [AugParagraphBuilder.build('home view')];
-//   }
-// }
+import { Component } from '@angular/core';
+import {
+    AugRegisterView,
+    AugRegisterRoute,
+    AugViewGenerator,
+    AugViewMetadata,
+} from '../../../../angular-ui-generator/src/public-api';
+
+@Component({
+  selector: 'app-home-view',
+  template: '',
+})
+@AugRegisterView({
+  name: 'home',
+  children: [],
+})
+@AugRegisterRoute({
+  path: 'home',
+  title: 'Home',
+})
+export class HomeView extends AugViewGenerator {
+  override buildViewMetadata(): AugViewMetadata[] {
+    return [
+      {
+        kind: 'paragraph',
+        text: 'This is home page',
+      },
+    ];
+  }
+}
