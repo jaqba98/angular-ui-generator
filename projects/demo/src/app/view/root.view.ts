@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import {
-    AugRegisterView,
-    AugRegisterRoute,
-    AugViewGenerator,
-    AugViewMetadata,
+  AugRegisterView,
+  AugRegisterRoute,
+  AugViewGenerator,
+  AugViewMetadata,
 } from '../../../../angular-ui-generator/src/public-api';
 
 @Component({
