@@ -16,7 +16,7 @@ import {
 })
 @AugRegisterRoute({
   path: '',
-  title: 'home',
+  redirectTo: 'home',
 })
 export class RootView extends AugViewGenerator {
   override buildViewMetadata(): AugViewMetadata[] {
